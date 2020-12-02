@@ -1,6 +1,9 @@
 import React, { useState, useRef } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
+import {
+    Link
+} from "react-router-dom";
 
 import './Register.css';
 
@@ -30,7 +33,7 @@ function Register() {
             <h1>Burguer Queen</h1>
             <p>Order System Management</p>
 
-            <h2>Welcome back!</h2>
+            <h2>Welcome!</h2>
 
             <Form onSubmit={handleRegister}>
                 <div className="form-group">
@@ -60,7 +63,7 @@ function Register() {
                 </div>
             </Form>
 
-            <p>I don't have an account, <a href="#">Sign Up</a></p>
+            <p>I’ve already have an account, <Link to="/login">Sign In</Link></p>
 
             <a href="">Terms and Conditions</a>
         </div>
