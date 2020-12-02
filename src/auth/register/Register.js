@@ -2,7 +2,8 @@ import React, { useState, useRef } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import {
-    Link
+    Link,
+    useHistory
 } from "react-router-dom";
 
 import './Register.css';
@@ -10,6 +11,7 @@ import './Register.css';
 function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    let history =  useHistory();
 
     const onChangeEmail = (e) => {
         const email = e.target.value;
@@ -23,9 +25,11 @@ function Register() {
 
     const handleRegister = (e) => {
         e.preventDefault();
-
+        
         // TODO: Send to Register
         console.log({email, password});
+        history.push("/dashboard");
+
     }
 
     return (
