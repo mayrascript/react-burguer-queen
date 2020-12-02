@@ -1,0 +1,11 @@
+.dashboard {
+    display: flex;
+}
+
+.side-menu {
+    width: 292px;
+    height: 100vh;
+    outline: 1px solid;
+    /*position: fixed;*/
+}
+

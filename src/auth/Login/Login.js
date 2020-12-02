@@ -3,11 +3,12 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 
 import './Login.css';
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    let history =  useHistory();
 
     const onChangeEmail = (e) => {
         const email = e.target.value;
@@ -24,6 +25,7 @@ function Login() {
 
         // TODO: Send to Login
         console.log({email, password});
+        history.push("/dashboard/new-order");
     }
 
     return (

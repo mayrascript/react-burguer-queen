@@ -29,9 +29,6 @@ function App() {
               <Dashboard />
             </Route>
 
-            <Route path="/orders">
-              <Orders />
-            </Route>
             <Route path="/">
               <Register />
             </Route>
