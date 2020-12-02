@@ -25,7 +25,7 @@ function Register() {
 
     const handleRegister = (e) => {
         e.preventDefault();
-        
+
         // TODO: Send to Register
         console.log({email, password});
         history.push("/dashboard");

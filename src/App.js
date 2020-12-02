@@ -10,6 +10,7 @@ import './App.css';
 import Register from "./auth/register/Register";
 import Login from './auth/Login/Login';
 import Dashboard from "./dashboard/Dashboard";
+import Orders from "./dashboard/waiter/orders/Orders";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
             </Route>
             <Route path="/dashboard">
               <Dashboard />
+            </Route>
+
+            <Route path="/orders">
+              <Orders />
             </Route>
             <Route path="/">
               <Register />
