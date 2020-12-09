@@ -4,6 +4,7 @@ import {Switch, Route, BrowserRouter as Router, Link} from "react-router-dom";
 import './Dashboard.css';
 import Orders from "./waiter/orders/Orders";
 import NewOrder from "./waiter/new-order/NewOrder";
+import SelectItem from "./waiter/new-order/select-item/SelectItem";
 
 function Dashboard() {
     return (
@@ -23,6 +24,9 @@ function Dashboard() {
                  <Switch>
                      <Route exact path="/dashboard/new-order">
                          <NewOrder />
+                     </Route>
+                     <Route exact path="/dashboard/new-order/select-item">
+                         <SelectItem />
                      </Route>
                      <Route exact path="/dashboard/orders">
                          <Orders />

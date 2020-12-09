@@ -10,7 +10,6 @@ import './App.css';
 import Register from "./auth/register/Register";
 import Login from './auth/Login/Login';
 import Dashboard from "./dashboard/Dashboard";
-import Orders from "./dashboard/waiter/orders/Orders";
 
 function App() {
   return (
@@ -28,7 +27,6 @@ function App() {
             <Route path="/dashboard">
               <Dashboard />
             </Route>
-
             <Route path="/">
               <Register />
             </Route>
