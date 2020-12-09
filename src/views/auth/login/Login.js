@@ -34,7 +34,7 @@ function Login() {
     };
 
     return (
-        <div className="Login">
+        <div className="auth login">
             <h1>Burguer Queen</h1>
             <p>Order System Management</p>
 

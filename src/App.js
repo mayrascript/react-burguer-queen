@@ -3,8 +3,8 @@ import firebase from "firebase";
 
 import "./App.css";
 
+import Login from "./views/auth/Login/Login";
 import Register from "./views/auth/register/Register";
-import Login from "./views/auth/login/Login";
 import Dashboard from "./layouts/dashboard/Dashboard";
 import Orders from "./views/waiter/orders/Orders";
 import NewOrder from "./views/waiter/new-order/NewOrder";

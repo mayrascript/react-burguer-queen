@@ -7,8 +7,11 @@ import { Link, useHistory } from "react-router-dom";
 
 import "./Register.scss";
 import { register } from "../../../services/auth.service";
+import { ButtonFlatPrimary } from "../../../components/Button";
+import { Paragraph, SubTitle, Title } from "../../../components/Text";
+import { LinkPrimary } from "../../../components/LinkPrimary";
 
-function Register() {
+export const Register = (props) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -48,13 +51,13 @@ function Register() {
     };
 
     return (
-        <div className="Register">
-            <h1>Burguer Queen</h1>
-            <p>Order System Management</p>
+        <div className="auth register">
+            <Title>Burguer Queen</Title>
+            <Paragraph>Order System Management</Paragraph>
 
-            <h2>Welcome!</h2>
+            <SubTitle>Welcome!</SubTitle>
 
-            <Form onSubmit={handleRegister}>
+            <Form className="form" onSubmit={handleRegister}>
                 <div className="form-group">
                     <label htmlFor="name">Name</label>
                     <Input
@@ -97,17 +100,17 @@ function Register() {
                 </div>
 
                 <div className="form-group">
-                    <button className="btn btn-primary btn-block">Sign Up</button>
+                    <ButtonFlatPrimary primary>Sign Up</ButtonFlatPrimary>
                 </div>
             </Form>
 
-            <p>
-                I’ve already have an account, <Link to="/login">Sign In</Link>
-            </p>
+            <Paragraph>
+                I’ve already have an account, <LinkPrimary to="/login">Sign In</LinkPrimary>
+            </Paragraph>
 
-            <a href="">Terms and Conditions</a>
+            <LinkPrimary href="">Terms and Conditions</LinkPrimary>
         </div>
     );
-}
+};
 
 export default Register;
