@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { color, fontFamily } from "../styles/styles";
 import { Link } from "react-router-dom";
 
-export const LinkPrimary = styled(Link)`
+import { color, fontFamily } from "../styles/styles";
+
+export const StyledLink = styled(Link)`
     font-family: ${fontFamily.secondary};
     font-size: 18px;
     font-weight: bold;

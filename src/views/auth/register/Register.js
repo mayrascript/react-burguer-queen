@@ -1,15 +1,15 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
-import Select from "react-validation/build/select";
-
-import { Link, useHistory } from "react-router-dom";
 
 import "./Register.scss";
+
 import { register } from "../../../services/auth.service";
 import { ButtonFlatPrimary } from "../../../components/Button";
 import { Paragraph, SubTitle, Title } from "../../../components/Text";
-import { LinkPrimary } from "../../../components/LinkPrimary";
+import { StyledLink } from "../../../components/StyledLink";
+import { StyledInput } from "../../../components/StyledInput";
+import { StyledSelect } from "../../../components/StyledSelect";
 
 export const Register = (props) => {
     const [name, setName] = useState("");
@@ -59,8 +59,8 @@ export const Register = (props) => {
 
             <Form className="form" onSubmit={handleRegister}>
                 <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <Input
+                    <StyledInput
+                        placeholder="Name"
                         type="text"
                         className="form-control"
                         name="name"
@@ -70,8 +70,8 @@ export const Register = (props) => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <Input
+                    <StyledInput
+                        placeholder="Email"
                         type="text"
                         className="form-control"
                         name="email"
@@ -81,8 +81,8 @@ export const Register = (props) => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <Input
+                    <StyledInput
+                        placeholder="Password"
                         type="password"
                         className="form-control"
                         name="password"
@@ -92,11 +92,11 @@ export const Register = (props) => {
                 </div>
 
                 <div className="form-group">
-                    <Select name="role" value="" onChange={onChangeRole}>
+                    <StyledSelect name="role" value="" onChange={onChangeRole}>
                         <option value="">Choose your role</option>
                         <option value="waiter">Waiter</option>
                         <option value="chef">Chef</option>
-                    </Select>
+                    </StyledSelect>
                 </div>
 
                 <div className="form-group">
@@ -105,10 +105,10 @@ export const Register = (props) => {
             </Form>
 
             <Paragraph>
-                I’ve already have an account, <LinkPrimary to="/login">Sign In</LinkPrimary>
+                I’ve already have an account, <StyledLink to="/login">Sign In</StyledLink>
             </Paragraph>
 
-            <LinkPrimary href="">Terms and Conditions</LinkPrimary>
+            <StyledLink href="">Terms and Conditions</StyledLink>
         </div>
     );
 };

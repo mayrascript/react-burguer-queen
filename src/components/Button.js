@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { color, fontFamily } from "../styles/styles";
 
 const Button = styled.button`
@@ -6,6 +7,7 @@ const Button = styled.button`
     height: 54px;
     border: none;
     border-radius: 8px;
+    margin: 6px;
 `;
 
 const ButtonFlat = styled(Button)`
