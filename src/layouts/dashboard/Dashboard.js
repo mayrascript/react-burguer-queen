@@ -1,21 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import "./Dashboard.scss";
+import {
+    StyledSideMenu,
+    StyledSideMenuLink,
+    StyledSideMenuLinkSignOut,
+} from "../../components/StyledSideMenu";
+import { SubTitle } from "../../components/Text";
+import { Avatar } from "../../components/Avatar";
 
 function Dashboard(props) {
     return (
         <div className="dashboard">
-            <div className="side-menu">
+            <StyledSideMenu>
+                <Avatar></Avatar>
+                <SubTitle>Mayra</SubTitle>
                 <ul>
                     <li>
-                        <Link to="/d/new-order">New Order</Link>
+                        <StyledSideMenuLink to="/d/new-order">New Order</StyledSideMenuLink>
                     </li>
                     <li>
-                        <Link to="/d/orders">Orders</Link>
+                        <StyledSideMenuLink to="/d/orders">Orders</StyledSideMenuLink>
                     </li>
                 </ul>
-            </div>
+
+                <StyledSideMenuLinkSignOut>Sign Out</StyledSideMenuLinkSignOut>
+            </StyledSideMenu>
 
             {props.children}
         </div>

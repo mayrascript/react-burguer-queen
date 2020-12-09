@@ -1,10 +1,10 @@
 .dashboard {
     display: flex;
-}
-
-.side-menu {
-    width: 292px;
-    height: 100vh;
-    outline: 1px solid;
-    /*position: fixed;*/
+    flex-direction: row;
+    ul {
+        padding-left: 0;
+        li {
+            list-style: none;
+        }
+    }
 }
