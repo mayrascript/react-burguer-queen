@@ -1,8 +1,8 @@
-import './Modal.scss';
+import "./Modal.scss";
 
-export default function Modal (props) {
+export default function Modal(props) {
     const handleClose = () => {
-       props.handleClose();
+        props.handleClose();
     };
 
     return (
@@ -11,10 +11,8 @@ export default function Modal (props) {
                 <div className="modal-header">
                     <button onClick={handleClose}>Close</button>
                 </div>
-                <div className="modal-content">
-                    {props.children}
-                </div>
+                <div className="modal-content">{props.children}</div>
             </div>
         </div>
-    )
+    );
 }

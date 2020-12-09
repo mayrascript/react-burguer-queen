@@ -1,7 +1,5 @@
-import './Order.scss';
+import "./Order.scss";
 
-export default function Order (props) {
-    return (
-        <h2>Order</h2>
-    )
+export default function Order(props) {
+    return <h2>Order</h2>;
 }

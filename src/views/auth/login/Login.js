@@ -2,14 +2,14 @@ import React, { useState, useRef } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 
-import './Login.scss';
-import {Link, useHistory} from "react-router-dom";
-import {login} from "../../../services/auth.service";
+import "./Login.scss";
+import { Link, useHistory } from "react-router-dom";
+import { login } from "../../../services/auth.service";
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    let history =  useHistory();
+    let history = useHistory();
 
     const onChangeEmail = (e) => {
         const email = e.target.value;
@@ -24,14 +24,14 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
 
-       try {
-           const {user} = await login(email, password);
-           console.log('user', user);
-           history.push("/d/new-order");
-       }catch (e) {
-           console.log('Invalid credentials')
-       }
-    }
+        try {
+            const { user } = await login(email, password);
+            console.log("user", user);
+            history.push("/d/new-order");
+        } catch (e) {
+            console.log("Invalid credentials");
+        }
+    };
 
     return (
         <div className="Login">
@@ -68,7 +68,9 @@ function Login() {
                 </div>
             </Form>
 
-            <p>I don't have an account,  <Link to="/register">Sign Up</Link></p>
+            <p>
+                I don't have an account, <Link to="/register">Sign Up</Link>
+            </p>
 
             <a href="">Terms and Conditions</a>
         </div>
