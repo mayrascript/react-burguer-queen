@@ -4,6 +4,7 @@ import Input from "react-validation/build/input";
 
 import './Login.scss';
 import {Link, useHistory} from "react-router-dom";
+import {login} from "../../../services/auth.service";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -20,12 +21,16 @@ function Login() {
         setPassword(password);
     };
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
 
-        // TODO: Send to Login
-        console.log({email, password});
-        history.push("/d/new-order");
+       try {
+           const {user} = await login(email, password);
+           console.log('user', user);
+           history.push("/d/new-order");
+       }catch (e) {
+           console.log('Invalid credentials')
+       }
     }
 
     return (
