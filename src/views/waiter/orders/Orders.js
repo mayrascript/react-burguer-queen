@@ -1,6 +1,6 @@
-import React  from "react";
+import React from "react";
 
-import './Orders.scss';
+import "./Orders.scss";
 
 function Orders() {
     return (

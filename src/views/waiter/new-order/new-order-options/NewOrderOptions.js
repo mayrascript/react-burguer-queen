@@ -1,4 +1,4 @@
-import './NewOrderOptions.scss';
+import "./NewOrderOptions.scss";
 
 function NewOrderOptions() {
     return (
@@ -8,7 +8,7 @@ function NewOrderOptions() {
             <button>Add to Order</button>
             <button>Remove From Order</button>
         </div>
-    )
+    );
 }
 
 export default NewOrderOptions;

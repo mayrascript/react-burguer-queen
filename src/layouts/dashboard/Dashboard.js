@@ -1,7 +1,7 @@
-import React  from "react";
-import {Link} from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
-import './Dashboard.scss';
+import "./Dashboard.scss";
 
 function Dashboard(props) {
     return (
@@ -19,7 +19,7 @@ function Dashboard(props) {
 
             {props.children}
         </div>
-    )
+    );
 }
 
 export default Dashboard;

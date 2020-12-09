@@ -3,26 +3,22 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import Select from "react-validation/build/select";
 
+import { Link, useHistory } from "react-router-dom";
 
-import {
-    Link,
-    useHistory
-} from "react-router-dom";
-
-import './Register.scss';
-import {register} from "../../../services/auth.service";
+import "./Register.scss";
+import { register } from "../../../services/auth.service";
 
 function Register() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [role, setRole] = useState("");
-    let history =  useHistory();
+    let history = useHistory();
 
     const onChangeName = (e) => {
         const name = e.target.value;
         setName(name);
-    }
+    };
 
     const onChangeEmail = (e) => {
         const email = e.target.value;
@@ -37,20 +33,19 @@ function Register() {
     const onChangeRole = (e) => {
         const role = e.target.value;
         setRole(role);
-    }
+    };
 
-    const handleRegister = async  (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
 
-        try{
-           await register(email, password, role);
-           history.push("/d/new-order");
-        }
-        catch(error){
-            console.log('Error Signing up with email and password')
+        try {
+            await register(email, password, role);
+            history.push("/d/new-order");
+        } catch (error) {
+            console.log("Error Signing up with email and password");
             // setError('Error Signing up with email and password');
         }
-    }
+    };
 
     return (
         <div className="Register">
@@ -93,20 +88,22 @@ function Register() {
                     />
                 </div>
 
-               <div className="form-group">
-                   <Select name='role' value='' onChange={onChangeRole}>
-                       <option value=''>Choose your role</option>
-                       <option value='waiter'>Waiter</option>
-                       <option value='chef'>Chef</option>
-                   </Select>
-               </div>
+                <div className="form-group">
+                    <Select name="role" value="" onChange={onChangeRole}>
+                        <option value="">Choose your role</option>
+                        <option value="waiter">Waiter</option>
+                        <option value="chef">Chef</option>
+                    </Select>
+                </div>
 
                 <div className="form-group">
                     <button className="btn btn-primary btn-block">Sign Up</button>
                 </div>
             </Form>
 
-            <p>I’ve already have an account, <Link to="/login">Sign In</Link></p>
+            <p>
+                I’ve already have an account, <Link to="/login">Sign In</Link>
+            </p>
 
             <a href="">Terms and Conditions</a>
         </div>
