@@ -25,7 +25,7 @@ function Login() {
 
         // TODO: Send to Login
         console.log({email, password});
-        history.push("/dashboard/new-order");
+        history.push("/d/new-order");
     }
 
     return (

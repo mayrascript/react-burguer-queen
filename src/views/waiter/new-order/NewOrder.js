@@ -1,6 +1,6 @@
 import './NewOrder.scss';
 
-import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function NewOrder() {
     return <div className="new-order">
@@ -12,8 +12,8 @@ function NewOrder() {
             <p>Choose an Option</p>
 
             <div>
-                <Link to="/dashboard/new-order/select-item">Breakfast</Link>
-                <Link to="/dashboard/new-order/select-item">Lunch/Dinner</Link>
+                <Link to="/d/new-order/select-item">Breakfast</Link>
+                <Link to="/d/new-order/select-item">Lunch/Dinner</Link>
             </div>
 
         </div>

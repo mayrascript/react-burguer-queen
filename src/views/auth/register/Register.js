@@ -28,7 +28,7 @@ function Register() {
 
         // TODO: Send to Register
         console.log({email, password});
-        history.push("/dashboard/new-order");
+        history.push("/d/new-order");
 
     }
 

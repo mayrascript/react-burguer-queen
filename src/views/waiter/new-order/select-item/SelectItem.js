@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import Modal from "../../../../shared/modal/Modal";
+import Modal from "../../../../layouts/modal/Modal";
 import NewOrderOptions from "../new-order-options/NewOrderOptions";
+import Order from "../../../../components/order/Order";
 
 function SelectItem() {
     const [state, setState] = useState({});
@@ -31,6 +32,7 @@ function SelectItem() {
                 <button type="button" onClick={handleOpen}>Drinks</button>
             </div>
 
+            <Order/>
             {modal}
         </div>
     )
