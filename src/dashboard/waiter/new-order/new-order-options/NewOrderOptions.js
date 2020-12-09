@@ -1,6 +1,8 @@
-function NewOrderOptionsModal() {
+import './NewOrderOptions.css';
+
+function NewOrderOptions() {
     return (
-        <div className="new-order-options modal">
+        <div className="new-order-options">
             <h1>Burguer</h1>
 
             <button>Add to Order</button>
@@ -9,4 +11,4 @@ function NewOrderOptionsModal() {
     )
 }
 
-export default NewOrderOptionsModal;
+export default NewOrderOptions;
