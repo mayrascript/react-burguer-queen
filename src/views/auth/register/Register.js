@@ -1,17 +1,28 @@
 import React, { useState, useRef } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
+import Select from "react-validation/build/select";
+
+
 import {
     Link,
     useHistory
 } from "react-router-dom";
 
 import './Register.scss';
+import {register} from "../../../services/auth.service";
 
 function Register() {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [role, setRole] = useState("");
     let history =  useHistory();
+
+    const onChangeName = (e) => {
+        const name = e.target.value;
+        setName(name);
+    }
 
     const onChangeEmail = (e) => {
         const email = e.target.value;
@@ -23,13 +34,22 @@ function Register() {
         setPassword(password);
     };
 
-    const handleRegister = (e) => {
+    const onChangeRole = (e) => {
+        const role = e.target.value;
+        setRole(role);
+    }
+
+    const handleRegister = async  (e) => {
         e.preventDefault();
 
-        // TODO: Send to Register
-        console.log({email, password});
-        history.push("/d/new-order");
-
+        try{
+           await register(email, password, role);
+           history.push("/d/new-order");
+        }
+        catch(error){
+            console.log('Error Signing up with email and password')
+            // setError('Error Signing up with email and password');
+        }
     }
 
     return (
@@ -40,6 +60,17 @@ function Register() {
             <h2>Welcome!</h2>
 
             <Form onSubmit={handleRegister}>
+                <div className="form-group">
+                    <label htmlFor="name">Name</label>
+                    <Input
+                        type="text"
+                        className="form-control"
+                        name="name"
+                        value={name}
+                        onChange={onChangeName}
+                    />
+                </div>
+
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
                     <Input
@@ -61,6 +92,14 @@ function Register() {
                         onChange={onChangePassword}
                     />
                 </div>
+
+               <div className="form-group">
+                   <Select name='role' value='' onChange={onChangeRole}>
+                       <option value=''>Choose your role</option>
+                       <option value='waiter'>Waiter</option>
+                       <option value='chef'>Chef</option>
+                   </Select>
+               </div>
 
                 <div className="form-group">
                     <button className="btn btn-primary btn-block">Sign Up</button>

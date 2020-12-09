@@ -2,19 +2,40 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
+import firebase from 'firebase';
 
 import './App.css';
 
 import Register from "./views/auth/register/Register";
-import Login from './views/auth/Login/Login';
+import Login from './views/auth/login/Login';
 import Dashboard from "./layouts/dashboard/Dashboard";
 import Orders from "./views/waiter/orders/Orders";
 import NewOrder from "./views/waiter/new-order/NewOrder";
 import SelectItem from "./views/waiter/new-order/select-item/SelectItem";
 
+export const firebaseConfig = {
+  apiKey: "AIzaSyCYWxuT9DFzYDUENv9Lb2Uj-r489pOWtLU",
+  authDomain: "burguer-queen-9c87b.firebaseapp.com",
+  databaseURL: "https://burguer-queen-9c87b.firebaseio.com",
+  projectId: "burguer-queen-9c87b",
+  storageBucket: "burguer-queen-9c87b.appspot.com",
+  messagingSenderId: "824615219018",
+  appId: "1:824615219018:web:d079fb95f4137a1e4e1bb3",
+  measurementId: "G-Q53GS6DFJ8"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+
+export const usersRef = firestore.collection('users');
+
 function App() {
+
+
   return (
       <Router>
         <div>

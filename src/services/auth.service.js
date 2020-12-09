@@ -1,22 +1,27 @@
-import axios from "axios";
+import {auth} from "../App";
+import {createUser} from "./user.service";
 
-const API_URL = "http://localhost:8080/api/auth/";
-
-const register = (email, password) => {
-    console.log('register', {email, password})
-    return true;
+const register = async (email, password, role) => {
+    const { user } = await auth.createUserWithEmailAndPassword(email, password);
+    const { uid } = user;
+    return createUser(uid, {email, role});
 }
 
 const login = (email, password) => {
-    return true;
+    return auth.signInWithEmailAndPassword(email, password);
 }
 
 const logout = () => {
-    return true;
+    return auth.signOut();
 }
 
-export default {
+const currentUser = () => {
+    return auth.currentUser;
+}
+
+export {
     register,
     login,
     logout,
+    currentUser
 };
