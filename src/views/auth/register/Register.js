@@ -10,6 +10,7 @@ import { Paragraph, SubTitle, Title } from "../../../components/Text";
 import { StyledLink } from "../../../components/StyledLink";
 import { StyledInput } from "../../../components/StyledInput";
 import { StyledSelect } from "../../../components/StyledSelect";
+import { AuthSection } from "../../../components/Sections";
 
 export const Register = (props) => {
     const [name, setName] = useState("");
@@ -41,6 +42,8 @@ export const Register = (props) => {
     const handleRegister = async (e) => {
         e.preventDefault();
 
+        console.log({ email, password, role });
+
         try {
             await register(email, password, role);
             history.push("/d/new-order");
@@ -51,7 +54,7 @@ export const Register = (props) => {
     };
 
     return (
-        <div className="auth register">
+        <AuthSection>
             <Title>Burguer Queen</Title>
             <Paragraph>Order System Management</Paragraph>
 
@@ -109,7 +112,7 @@ export const Register = (props) => {
             </Paragraph>
 
             <StyledLink href="">Terms and Conditions</StyledLink>
-        </div>
+        </AuthSection>
     );
 };
 

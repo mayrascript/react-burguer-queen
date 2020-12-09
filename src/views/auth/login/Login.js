@@ -5,6 +5,11 @@ import Input from "react-validation/build/input";
 import "./Login.scss";
 import { Link, useHistory } from "react-router-dom";
 import { login } from "../../../services/auth.service";
+import { Paragraph, SubTitle, Title } from "../../../components/Text";
+import { StyledInput } from "../../../components/StyledInput";
+import { ButtonFlatPrimary } from "../../../components/Button";
+import { StyledLink } from "../../../components/StyledLink";
+import { AuthSection } from "../../../components/Sections";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -34,16 +39,16 @@ function Login() {
     };
 
     return (
-        <div className="auth login">
-            <h1>Burguer Queen</h1>
-            <p>Order System Management</p>
+        <AuthSection>
+            <Title>Burguer Queen</Title>
+            <Paragraph>Order System Management</Paragraph>
 
-            <h2>Welcome back!</h2>
+            <SubTitle>Welcome back!</SubTitle>
 
             <Form onSubmit={handleLogin}>
                 <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <Input
+                    <StyledInput
+                        placeholder="Email"
                         type="text"
                         className="form-control"
                         name="email"
@@ -53,8 +58,8 @@ function Login() {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <Input
+                    <StyledInput
+                        placeholder="Password"
                         type="password"
                         className="form-control"
                         name="password"
@@ -64,16 +69,16 @@ function Login() {
                 </div>
 
                 <div className="form-group">
-                    <button className="btn btn-primary btn-block">Sign In</button>
+                    <ButtonFlatPrimary>Sign In</ButtonFlatPrimary>
                 </div>
             </Form>
 
-            <p>
-                I don't have an account, <Link to="/register">Sign Up</Link>
-            </p>
+            <Paragraph>
+                I don't have an account, <StyledLink to="/register">Sign Up</StyledLink>
+            </Paragraph>
 
-            <a href="">Terms and Conditions</a>
-        </div>
+            <StyledLink href="">Terms and Conditions</StyledLink>
+        </AuthSection>
     );
 }
 
