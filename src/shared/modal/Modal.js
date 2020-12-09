@@ -1,4 +1,4 @@
-import './Modal.css';
+import './Modal.scss';
 
 export default function Modal (props) {
     const handleClose = () => {

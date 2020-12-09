@@ -1,4 +1,4 @@
-import './NewOrderOptions.css';
+import './NewOrderOptions.scss';
 
 function NewOrderOptions() {
     return (

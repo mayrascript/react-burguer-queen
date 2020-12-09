@@ -1,7 +1,7 @@
 import React  from "react";
 import {Switch, Route, BrowserRouter as Router, Link} from "react-router-dom";
 
-import './Dashboard.css';
+import './Dashboard.scss';
 import Orders from "./waiter/orders/Orders";
 import NewOrder from "./waiter/new-order/NewOrder";
 import SelectItem from "./waiter/new-order/select-item/SelectItem";

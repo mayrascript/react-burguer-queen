@@ -6,7 +6,7 @@ import {
     useHistory
 } from "react-router-dom";
 
-import './Register.css';
+import './Register.scss';
 
 function Register() {
     const [email, setEmail] = useState("");
